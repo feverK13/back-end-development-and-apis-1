@@ -6,4 +6,4 @@
      return true;
    }
 
-   module.exports = isPrime;
+   module.exports = {isPrime};
