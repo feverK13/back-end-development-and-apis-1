@@ -1,0 +1,10 @@
+{
+  "name": "build-a-prime-number-checker-module",
+  "version": "1.0.0",
+  "description": "A simple npm module that checks whether a given number is prime.",
+  "main": "index.js",
+  "type": "commonjs",
+  "keywords": ["prime", "number", "math", "npm-module"],
+  "author": "Boku Boku Chagama",
+  "license": "MIT"
+}
