@@ -13,6 +13,32 @@ app.get("/", (_req, res) => {
 
 // Do not change code above this line
 
+app.get("/api/", (req, res) => {
+  const date = new Date();
+  res.json({
+    unix: date.getTime(),
+    utc: date.toUTCString()
+  })
+})
+
+app.get("/api/:date", (req, res) => {
+  const dateString = req.params.date;
+  
+  const isUnix = !isNaN(Number(dateString));
+  const date = new Date(isUnix ? parseInt(dateString) : dateString);
+
+  // Додаємо перевірку на валідність дати (це знадобиться для наступних вимог FreeCodeCamp)
+  if (isNaN(date.getTime())) {
+    return res.json({ error: "Invalid Date" });
+  }
+
+  res.json({
+    unix: date.getTime(),
+    utc: date.toUTCString()
+  });
+});
+
+
 // Do not change code below this line
 
 const PORT = 8000;
